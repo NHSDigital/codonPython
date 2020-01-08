@@ -5,7 +5,7 @@
 
 ## What is `codon`?
 
-The `codon` project was created to increase code sharing, consistancy of code and coding standards and encourage collaboration.  Package documentation is available on the [GitHub pages](https://codonlibrary.github.io/codonPython/) however further information for NHS Digital staff can be found [here](https://confluence.digital.nhs.uk/display/CON/Codon+-+Code+sharing), via our internal confluence page. `codonPython` aims to reduce the barrier for entry for analysis and provide software development experience for those at a higher level of technical ability. 
+The `codon` project was created to increase code sharing, code consistency, coding standards, and encourage collaboration.  Package documentation is available on the [GitHub pages](https://codonlibrary.github.io/codonPython/). `codonPython` aims to reduce the barrier for entry for analysis and provide software development experience for those at a higher level of technical ability. 
 
 ### Why `codon`?
 
