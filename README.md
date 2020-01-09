@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.com/codonlibrary/codonPython.svg?branch=master)](https://travis-ci.com/codonlibrary/codonPython)
 [![codecov](https://codecov.io/gh/codonlibrary/codonPython/branch/master/graph/badge.svg)](https://codecov.io/gh/codonlibrary/codonPython)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 ## What is `codon`?
 
