@@ -86,7 +86,7 @@ def check_nat_val(
         raise KeyError("Check column names correspond to the DataFrame.")
     # aggregate values by measure and breakdown
     grouped = (
-        df.groupby([measure_col, breakdown_col]).agg({value_col: sum}).reset_index()
+        df.groupby([measure_col, breakdown_col]).agg({value_col: "sum"}).reset_index()
     )
     national = grouped.loc[grouped[breakdown_col] == nat_val].reset_index()
     non_national = grouped.loc[grouped[breakdown_col] != nat_val].reset_index()
