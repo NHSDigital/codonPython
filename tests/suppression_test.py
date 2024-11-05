@@ -1,4 +1,4 @@
-from codonPython.suppression import suppress_value
+from codonpython.suppression import suppress_value
 import pytest
 
 

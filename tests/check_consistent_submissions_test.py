@@ -1,4 +1,4 @@
-from codonPython.check_consistent_submissions import check_consistent_submissions
+from codonpython.check_consistent_submissions import check_consistent_submissions
 import pandas as pd
 import numpy as np
 import pytest

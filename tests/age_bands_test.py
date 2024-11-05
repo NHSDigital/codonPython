@@ -1,4 +1,4 @@
-from codonPython import age_bands
+from codonpython import age_bands
 import numpy as np
 import math
 import pytest

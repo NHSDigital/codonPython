@@ -1,4 +1,4 @@
-from codonPython.nhsNumber import nhsNumberGenerator, nhsNumberValidator
+from codonpython.nhsNumber import nhsNumberGenerator, nhsNumberValidator
 import pytest
 import random
 

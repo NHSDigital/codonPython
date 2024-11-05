@@ -1,4 +1,4 @@
-from codonPython import dateValidator
+from codonpython import dateValidator
 import pytest
 
 

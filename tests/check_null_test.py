@@ -1,4 +1,4 @@
-from codonPython.check_null import check_null
+from codonpython.check_null import check_null
 import numpy as np
 import pandas as pd
 import pytest
