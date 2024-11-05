@@ -4,7 +4,7 @@
 [![codecov](https://codecov.io/gh/codonlibrary/codonPython/branch/master/graph/badge.svg)](https://codecov.io/gh/codonlibrary/codonPython)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-## What is `codon`?   
+## What is `codon`?
 
 The `codon` project was created to increase code sharing, code consistency, coding standards, and encourage collaboration.  Package documentation is available on the [GitHub pages](https://codonlibrary.github.io/codonPython/). `codonPython` aims to reduce the barrier for entry for analysis and provide software development experience for those at a higher level of technical ability. 
 
