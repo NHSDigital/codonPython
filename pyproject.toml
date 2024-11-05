@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "codonPython"
+version = "0.2.1"
+requires-python = ">=3.8"
+authors = [
+  {name = "NHS Digital DIS Team", email = "paul.ellingham@nhs.net"},
+]
+maintainers = [
+  {name = "NHS Digital Data Science Team", email = "england.rapchampions@nhs.net"}
+]
+description = "This is a first attempt at how our package will work."
+readme = "README.md"
+license = {file = "LICENSE"}
+keywords = ["NHS", "Python"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python"
+]
+
+[project.urls]
+Repository = "https://github.com/NHSDigital/codonPython"
