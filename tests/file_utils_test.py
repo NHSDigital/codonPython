@@ -90,26 +90,27 @@ def test_compare_BAU(x, y, names, dups, same, expected):
                 assert list_test1 == list_exp
 
 
+
 @pytest.mark.parametrize(
     "doctype, like, strict, expected", [("md", ["README"], True, ["README.md"])]
 )
 def test_file_search_BAU(doctype, like, strict, expected):
     assert file_search(doctype=doctype, like=like, strict=strict) == expected
 
+file_import_path = './tests'
 
 @pytest.mark.parametrize("expected", [({})])
 def test_import_files_BAU(expected):
-    assert import_files() == expected
-
+    assert import_files(file_import_path) == expected
 
 @pytest.mark.parametrize("subdir, expected", [(True, {})])
 def test_import_files_BAU_2(subdir, expected):
-    assert import_files(subdir=subdir) == expected
+    assert import_files(file_import_path, subdir=subdir) == expected
 
 
 @pytest.mark.parametrize("strict,subdir, expected", [(True, True, {})])
 def test_import_files_BAU_3(strict, subdir, expected):
-    assert import_files(strict=strict, subdir=subdir) == expected
+    assert import_files(file_import_path, strict=strict, subdir=subdir) == expected
 
 
 # ----------------Console output-------------------------
