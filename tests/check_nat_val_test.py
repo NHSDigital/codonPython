@@ -1,4 +1,4 @@
-from codonPython.check_nat_val import check_nat_val
+from codonpython.check_nat_val import check_nat_val
 import pytest
 import pandas as pd
 

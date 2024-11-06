@@ -122,18 +122,17 @@ def check_tolerance(
         _, yhat_l, yhat_u = wls_prediction_std(model, t_predict, alpha=alpha)
 
         # Store model results in master frame
-        results = results.append(
-            pd.DataFrame(
-                {
-                    "t": t_orig,
-                    "yhat_u": yhat_u,
-                    "yobs": y_predict,
-                    "yhat": yhat,
-                    "yhat_l": yhat_l,
-                    "polynomial": degree,
-                }
-            ),
-            ignore_index=True,
+        degree_results = pd.DataFrame(
+            {
+                "t": t_orig,
+                "yhat_u": yhat_u,
+                "yobs": y_predict,
+                "yhat": yhat,
+                "yhat_l": yhat_l,
+                "polynomial": degree,
+            }
         )
+
+        results = pd.concat([results, degree_results], ignore_index=True)
 
     return results
