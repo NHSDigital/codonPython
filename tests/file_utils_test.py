@@ -1,9 +1,12 @@
 from codonpython.file_utils import compare
 from codonpython.file_utils import file_search
 from codonpython.file_utils import import_files
+from tests.utils import DfWrap
 import numpy as np
 import pytest
 import pandas as pd
+
+
 
 df1 = pd.DataFrame(
     {
@@ -97,20 +100,36 @@ def test_compare_BAU(x, y, names, dups, same, expected):
 def test_file_search_BAU(doctype, like, strict, expected):
     assert file_search(doctype=doctype, like=like, strict=strict) == expected
 
-file_import_path = './tests'
+df_test_import = pd.DataFrame({
+    "test": ["test"]
+})
+df_test_import = DfWrap(df_test_import)
 
-@pytest.mark.parametrize("expected", [({})])
-def test_import_files_BAU(expected):
-    assert import_files(file_import_path) == expected
+expected_imports_subdir_search = {
+    '/tests/import_files/test': df_test_import, 
+    '/tests/import_files/subdir/subdir_test': df_test_import
+}
+expected_imports_no_subdirs = {'test': df_test_import}
+expected_imports_filename_match = {'/tests/import_files/subdir/subdir_test': df_test_import}
 
-@pytest.mark.parametrize("subdir, expected", [(True, {})])
-def test_import_files_BAU_2(subdir, expected):
+@pytest.mark.parametrize("file_import_path, subdir, expected", [('./tests', False, {})])
+def test_import_files_when_none_found(file_import_path, subdir, expected):
     assert import_files(file_import_path, subdir=subdir) == expected
 
+@pytest.mark.parametrize("file_import_path, subdir, strict, like, expected", [
+    ('./tests/import_files', False, False, [''], expected_imports_no_subdirs),
+    ('./tests/import_files', True, False, [''], expected_imports_subdir_search),
+    ('./tests/import_files', True, True, ['subdir'], expected_imports_filename_match),
+])
+def test_import_files_csv(file_import_path, subdir, strict, like, expected):
+    imported_files = import_files(file_import_path, subdir=subdir, strict=strict, like=like)
 
-@pytest.mark.parametrize("strict,subdir, expected", [(True, True, {})])
-def test_import_files_BAU_3(strict, subdir, expected):
-    assert import_files(file_import_path, strict=strict, subdir=subdir) == expected
+    # in the default csv mode, import_files() returns a dict with a pandas df for every csv file it finds. 
+    # The loop below wraps each dfs in the DfWrap class, so that the dicts can be compared with 
+    # the expected results for equality.
+    for file in imported_files:
+        imported_files[file] = DfWrap(imported_files[file])
+    assert imported_files == expected
 
 
 # ----------------Console output-------------------------
