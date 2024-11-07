@@ -124,7 +124,7 @@ def test_import_files_when_none_found(file_import_path, subdir, expected):
 def test_import_files_csv(file_import_path, subdir, strict, like, expected):
     imported_files = import_files(file_import_path, subdir=subdir, strict=strict, like=like)
 
-    # in the default csv mode, import_files() returns a dict with a pandas df for every csv file it finds. 
+    # import_files() by default returns a dict with a pandas df for every csv file it finds. 
     # The loop below wraps each dfs in the DfWrap class, so that the dicts can be compared with 
     # the expected results for equality.
     for file in imported_files:
